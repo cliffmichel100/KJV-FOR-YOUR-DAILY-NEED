@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2c2118">
+<meta name="description" content="AkoSiBiko Bible Baptist Study Bible — KJV reader, study notes, doctrine, glossary, indexes, maps and free external resources.">
+<title>AkoSiBiko — Bible Baptist Study Bible</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="book-shell">
+  <header class="cover">
+    <div class="cover-cross">✝</div>
+    <div class="cover-kicker">THE HOLY BIBLE</div>
+    <h1>King James Version</h1>
+    <div class="cover-rule"></div>
+    <p class="cover-subtitle">Bible Baptist Study Edition</p>
+    <p class="cover-small">Scripture • Doctrine • Study • Evangelism • Discipleship</p>
+    <div class="cover-seal">KJV<br><span>1769</span></div>
+  </header>
+
+  <nav class="topbar">
+    <button class="navbtn active" data-page="reader">📖 Bible</button>
+    <button class="navbtn" data-page="study">📝 Study Notes</button>
+    <button class="navbtn" data-page="doctrine">✝ Doctrine</button>
+    <button class="navbtn" data-page="glossary">🔎 Glossary</button>
+    <button class="navbtn" data-page="indexes">☷ Indexes</button>
+    <button class="navbtn" data-page="maps">🗺 Maps</button>
+    <button class="navbtn" data-page="library">📚 Library</button>
+  </nav>
+
+  <main>
+    <section id="reader" class="page active">
+      <div class="page-heading">
+        <div><span class="eyebrow">SCRIPTURE READER</span><h2>The Holy Bible</h2></div>
+        <div class="status" id="loadStatus">Loading KJV…</div>
+      </div>
+      <div class="toolbar">
+        <select id="bookSelect" aria-label="Book"></select>
+        <select id="chapterSelect" aria-label="Chapter"></select>
+        <input id="searchBox" type="search" placeholder="Search the KJV…" aria-label="Search Bible">
+        <button id="searchBtn" class="goldbtn">Search</button>
+        <button id="randomBtn" class="plainbtn">Random Verse</button>
+      </div>
+      <div id="searchResults" class="search-results hidden"></div>
+      <article class="paper">
+        <div class="paper-head">
+          <div>
+            <div class="mini-label">KING JAMES VERSION</div>
+            <h3 id="chapterTitle">Genesis 1</h3>
+          </div>
+          <div class="paper-actions">
+            <button id="prevChapter">‹</button><button id="nextChapter">›</button>
+          </div>
+        </div>
+        <div id="verseList" class="verses"></div>
+      </article>
+    </section>
+
+    <section id="study" class="page">
+      <div class="page-heading"><div><span class="eyebrow">ANNOTATED STUDY</span><h2>Study Bible Notes</h2></div></div>
+      <div class="notice">These notes are original study aids written for this site. They are not reproduced from a commercial study Bible.</div>
+      <div class="cards" id="studyCards"></div>
+    </section>
+
+    <section id="doctrine" class="page">
+      <div class="page-heading"><div><span class="eyebrow">BIBLE BAPTIST THEOLOGY</span><h2>Doctrine & Lessons</h2></div></div>
+      <div class="notice">This section presents a conservative Bible-Baptist framework requested for this project. It intentionally does not reproduce Calvinist/TULIP or Arminian doctrinal systems.</div>
+      <div class="doctrine-grid" id="doctrineGrid"></div>
+    </section>
+
+    <section id="glossary" class="page">
+      <div class="page-heading"><div><span class="eyebrow">REFERENCE</span><h2>Theological Glossary</h2></div></div>
+      <input id="glossarySearch" class="wide-search" placeholder="Search terms such as salvation, sanctification, ordinance…">
+      <div id="glossaryList" class="glossary"></div>
+    </section>
+
+    <section id="indexes" class="page">
+      <div class="page-heading"><div><span class="eyebrow">REFERENCE</span><h2>Indexes & Study Paths</h2></div></div>
+      <div class="index-grid">
+        <div class="index-card"><h3>Salvation Index</h3><p>Grace, faith, repentance, justification, regeneration, adoption, sanctification, assurance, eternal security and glorification.</p><div class="chips" data-links="John 3:16|Romans 3:23|Romans 5:8|Romans 6:23|Romans 10:9-13|Ephesians 2:8-9|Titus 3:5|1 John 5:11-13"></div></div>
+        <div class="index-card"><h3>Church Index</h3><p>Local church, membership, ordinances, leadership, discipline, unity, giving, prayer, missions and evangelism.</p><div class="chips" data-links="Acts 2:41-47|1 Corinthians 11:23-29|Ephesians 4:11-16|1 Timothy 3:1-13|Titus 1:5-9|Hebrews 10:24-25"></div></div>
+        <div class="index-card"><h3>Christian Living</h3><p>Prayer, holiness, separation, forgiveness, humility, suffering, work, family, speech and witnessing.</p><div class="chips" data-links="Romans 12:1-2|Ephesians 4:29-32|Philippians 4:6-9|Colossians 3:12-17|1 Peter 3:15"></div></div>
+        <div class="index-card"><h3>Evangelism & Missions</h3><p>Great Commission, Gospel preaching, personal witnessing, discipleship, prayer for laborers and missions support.</p><div class="chips" data-links="Matthew 28:18-20|Mark 16:15|Luke 19:10|Acts 1:8|Romans 1:16|2 Timothy 4:1-5"></div></div>
+      </div>
+    </section>
+
+    <section id="maps" class="page">
+      <div class="page-heading"><div><span class="eyebrow">BIBLE GEOGRAPHY</span><h2>Maps & Places</h2></div></div>
+      <div class="map-hero">
+        <div class="map-lines">✦  JERUSALEM  •  BETHLEHEM  •  NAZARETH  •  JERICHO  •  ANTIOCH  •  CORINTH  •  EPHESUS  •  ROME  ✦</div>
+        <p>Explore Bible geography through the open map resources below. The site does not claim that every historical location has one uncontested identification.</p>
+      </div>
+      <div class="resource-grid">
+        <a class="resource" href="https://openbible.info/geo/" target="_blank" rel="noopener"><b>OpenBible Bible Geocoding</b><span>Complete biblical-place dataset and map downloads; CC BY attribution required.</span></a>
+        <a class="resource" href="https://www.openstreetmap.org/" target="_blank" rel="noopener"><b>OpenStreetMap</b><span>Open geographic mapping platform for general geographic context.</span></a>
+        <a class="resource" href="https://ebible.org/bible/" target="_blank" rel="noopener"><b>eBible.org Bible Resources</b><span>Free Bible formats and public-domain/open Bible resources.</span></a>
+      </div>
+    </section>
+
+    <section id="library" class="page">
+      <div class="page-heading"><div><span class="eyebrow">FREE REFERENCE LIBRARY</span><h2>Supporting Documents</h2></div></div>
+      <div class="notice">The library links to resources hosted by their respective providers. Copyright status can vary by country and by edition; always read the source's license/rights statement before redistributing a file.</div>
+      <div class="resource-grid">
+        <a class="resource" href="https://www.gutenberg.org/ebooks/10" target="_blank" rel="noopener"><b>Project Gutenberg — KJV</b><span>Free KJV eBook; Gutenberg identifies it as public domain in the USA.</span></a>
+        <a class="resource" href="https://ebible.org/bible/details.php?id=eng-kjv2006" target="_blank" rel="noopener"><b>eBible.org — KJV 1769</b><span>Public-domain KJV resource with downloadable formats; jurisdiction note included by source.</span></a>
+        <a class="resource" href="https://openlibrary.org/books/OL25844299M/A_commentary_on_the_Holy_Bible" target="_blank" rel="noopener"><b>Matthew Henry Commentary</b><span>Open Library record for an 1850 edition with download options.</span></a>
+        <a class="resource" href="https://archive.org/" target="_blank" rel="noopener"><b>Internet Archive</b><span>Searchable repository for historical public-domain theological books and scans.</span></a>
+        <a class="resource" href="https://www.blueletterbible.org/" target="_blank" rel="noopener"><b>Blue Letter Bible</b><span>External study resource. Follow its own copyright and usage rules.</span></a>
+        <a class="resource" href="https://www.stepbible.org/" target="_blank" rel="noopener"><b>STEP Bible</b><span>External Bible study platform with language and reference tools.</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">AKOSIBIKO</div>
+    <p>“Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.” — John 5:39 KJV</p>
+    <div class="footer-links">
+      <a href="https://ebible.org/bible/details.php?id=eng-kjv2006" target="_blank" rel="noopener">KJV source</a>
+      <a href="https://www.gutenberg.org/ebooks/10" target="_blank" rel="noopener">Gutenberg</a>
+      <a href="https://openbible.info/geo/" target="_blank" rel="noopener">Bible maps</a>
+    </div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
